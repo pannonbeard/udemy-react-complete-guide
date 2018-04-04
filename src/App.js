@@ -24,6 +24,7 @@ class App extends Component {
   }
 
   render() {
+    
     const style = {
       backgroundColor: 'white',
       font: 'inherit',
@@ -31,6 +32,7 @@ class App extends Component {
       padding: '8px',
       cursor: 'pointer'
     }
+
     const { people } = this.state
     return (
       <div className="App">
