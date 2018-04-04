@@ -17,6 +17,12 @@ class App extends Component {
     this.setState({ people })
   }
 
+  nameChangeHandler = (e) => {
+    let people = this.state.people
+    people[1].name = e.target.value
+    this.setState({ people })
+  }
+
   render() {
     const { people } = this.state
     return (
@@ -29,9 +35,10 @@ class App extends Component {
             name={person.name} 
             age={person.age} 
             click={this.switchNameHandler.bind(this, 'max')}
+            change={this.nameChangeHandler}
           />
         ))}
-        <Person name={'Tim'} age={19}>
+        <Person name={'Tim'} age={19} change={this.nameChangeHandler}>
           <strong>This is my job</strong>
         </Person>
       </div>
