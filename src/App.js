@@ -11,9 +11,9 @@ class App extends Component {
     ]
   }
 
-  switchNameHandler = () => {
+  switchNameHandler = (newName) => {
     let people = this.state.people
-    people[0].name = 'Geoffy'
+    people[0].name = newName
     this.setState({ people })
   }
 
@@ -22,13 +22,13 @@ class App extends Component {
     return (
       <div className="App">
         <h1>My Head</h1>
-        <button onClick={this.switchNameHandler}>Switch Name</button>
+        <button onClick={() => this.switchNameHandler('Maximal')}>Switch Name</button>
         { people.map( (person, index) => (
           <Person 
             key={index} 
             name={person.name} 
             age={person.age} 
-            click={this.switchNameHandler}
+            click={this.switchNameHandler.bind(this, 'max')}
           />
         ))}
         <Person name={'Tim'} age={19}>
