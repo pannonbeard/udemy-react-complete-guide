@@ -1,9 +1,10 @@
 import React from 'react'
+import './Person.css'
 
 const person = ({name, age, click, change, children}) =>
-  <div>
+  <div className="person">
     <p onClick={click}>I'm a {name} who is {age} years old</p>
-    {children}
+    {children}<br />
     <input type="text" onChange={change}/>
   </div>
 
