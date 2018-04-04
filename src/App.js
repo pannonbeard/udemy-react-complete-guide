@@ -24,11 +24,18 @@ class App extends Component {
   }
 
   render() {
+    const style = {
+      backgroundColor: 'white',
+      font: 'inherit',
+      border: '1px solid blue',
+      padding: '8px',
+      cursor: 'pointer'
+    }
     const { people } = this.state
     return (
       <div className="App">
         <h1>My Head</h1>
-        <button onClick={() => this.switchNameHandler('Maximal')}>Switch Name</button>
+        <button style={style} onClick={() => this.switchNameHandler('Maximal')}>Switch Name</button>
         { people.map( (person, index) => (
           <Person 
             key={index} 
