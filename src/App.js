@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './App.css';
 import Person from './Person/Person'
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary'
 
 class App extends Component {
   state = {
@@ -46,14 +47,15 @@ class App extends Component {
     if (showPersons){
       persons = people.map(
         (person, index) => (
-          <Person
-            key={person.id}
-            click={this.deletePersonHandler.bind(this, index)} // one of two methods to passing methods down
-            name={person.name}
-            age={person.age}
-            //click={this.switchNameHandler.bind(this, 'max')} 
-            change={(e) => this.nameChangeHandler(e, person.id)} // the other methods to passing methods down
-          />
+          <ErrorBoundary key={person.id}>
+            <Person
+              click={this.deletePersonHandler.bind(this, index)} // one of two methods to passing methods down
+              name={person.name}
+              age={person.age}
+              //click={this.switchNameHandler.bind(this, 'max')} 
+              change={(e) => this.nameChangeHandler(e, person.id)} // the other methods to passing methods down
+            />
+          </ErrorBoundary>
         )
       )
       btnClass = classes.Red
