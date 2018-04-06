@@ -68,11 +68,11 @@ class App extends Component {
 
     const classNames = []
     if(this.state.people.length <= 2){
-      classNames.push('red')
+      classNames.push(classes.red)
     }
 
     if(this.state.people.length <= 1){
-      classNames.push('bold')
+      classNames.push(classes.bold)
     }
     
     return (
