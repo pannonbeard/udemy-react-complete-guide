@@ -39,17 +39,10 @@ class App extends Component {
   }
 
   render() {
-    
-    const style = {
-      backgroundColor: 'green',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer'
-    }
-
     const { people, showPersons } = this.state
     let persons = null
+    let btnClass = '';
+
     if (showPersons){
       persons = people.map(
         (person, index) => (
@@ -63,7 +56,7 @@ class App extends Component {
           />
         )
       )
-      style.backgroundColor = 'red'
+      btnClass = classes.Red
     }
 
     const classNames = []
@@ -79,7 +72,7 @@ class App extends Component {
       <div className={classes.App}>
         <h1>My Head</h1>
         <p className={classNames.join(' ')}>this works</p>
-        <button style={style} onClick={this.togglePersonsHandler}>Show People</button>
+        <button className={btnClass} onClick={this.togglePersonsHandler}>Show People</button>
         {persons}
       </div>
     );
