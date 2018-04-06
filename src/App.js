@@ -51,7 +51,7 @@ class App extends Component {
             click={this.deletePersonHandler.bind(this, index)} // one of two methods to passing methods down
             name={person.name}
             age={person.age}
-            //click={this.switchNameHandler.bind(this, 'max')}
+            //click={this.switchNameHandler.bind(this, 'max')} adding a change
             change={(e) => this.nameChangeHandler(e, person.id)} // the other methods to passing methods down
           />
         )
